@@ -1,6 +1,7 @@
 <template>
   <div id="editor">
     <h1>エディター画面</h1>
+    <a id="download" href="#" download="sample.md" @click="download()">ダウンロード</a>
     <div class="editorWrapper">
       <textarea class="markdown" v-model="markdown"></textarea>
       <div class="preview" v-html="preview()"></div>
@@ -20,6 +21,17 @@ export default {
   methods:{
     preview: function(){
       return marked(this.markdown);
+    },
+    download: function(){
+      //var content = this.markdown;
+      var blob = new Blob([this.markdown], {"type" : "text/plain"});
+
+      if(window.navigator.msSaveBlob){
+        window.navigator.msSaveBlob(blob, "sample.md");
+        window.navigator.msSaveOrOpenBlob(blob, "sample.md");
+      } else {
+        document.getElementById("download").href = window.URL.createObjectURL(blob);
+      }
     },
   }
 }
