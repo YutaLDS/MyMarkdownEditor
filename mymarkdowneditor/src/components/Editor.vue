@@ -1,11 +1,11 @@
 <template>
   <div id="editor">
-    <h1>エディター画面</h1>
-    <a id="download" href="#" download="sample.md" @click="download()">ダウンロード</a>
+    <h1>My Markdown Editor</h1>
     <div class="editorWrapper">
       <textarea class="markdown" v-model="markdown"></textarea>
       <div class="preview" v-html="preview()"></div>
     </div>
+    <a id="download" href="#" download="sample.md" @click="download()">ダウンロード</a>
   </div>
 </template>
 
@@ -38,15 +38,30 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h1{
+  margin-bottom: 10px;
+  color: #5AB38B;
+}
+#download{
+  float: left;
+  margin-left: 20px;
+  text-decoration: none;
+}
+#download:hover{
+  text-decoration: underline;
+}
 .editorWrapper{
   display: flex;
+  margin:20px;
 }
 .markdown{
   width:50%;
-  height:500px;
+  height:600px;
 }
 .preview{
+  background-color: #E3E3E3;
   width:50%;
   text-align: left;
+  margin-left: 30px;
 }
 </style>
