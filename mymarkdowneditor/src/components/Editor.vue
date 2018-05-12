@@ -63,5 +63,6 @@ h1{
   width:50%;
   text-align: left;
   margin-left: 30px;
+  padding:10px;
 }
 </style>
