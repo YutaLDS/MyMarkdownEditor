@@ -57,12 +57,15 @@ h1{
 .markdown{
   width:50%;
   height:600px;
+  overflow-y: scroll;
 }
 .preview{
   background-color: #E3E3E3;
   width:50%;
+  height:600px;
   text-align: left;
   margin-left: 30px;
   padding:10px;
+  overflow-y: scroll;
 }
 </style>
